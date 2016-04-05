@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="row">
+	<div class='col-md-8'>
+		<h2>Aerial Assist Match Scouting Form</h2>
+	</div>
+	<div class='col-md-4 text-right'>
+		<img src="static/custom/logo.png" id="logo"></img>
+	</div>
+</div>
+<form method="post" id="scouting-form" autocomplete="off">
+  {{ form.csrf_token }}
+  <div class="row form-group">
+		{{ form.match_id }}
+		{{ form.team_id }}
+  </div>
+  <div class="game-period">
+  	<h3>Autonomous</h3>
+  	<div class="row">
+  		{{ form.auton_balls }}
+
+  		<div class='col-md-3'>
+  			{{ form.auton_high.label }} {{ form.auton_high }}
+  		</div>
+  		<div class='col-md-3'>
+  			{{ form.auton_low.label }} {{ form.auton_low }}
+  		</div>  		
+  	</div>
+  </div>
+  <div class='game-period'>
+  	<h3>Teleop</h3>
+  	<div class='row'>
+  		{{ form.high }}
+  		{{ form.high_miss }}
+  		{{ form.low }}
+  	</div>
+  	<div class='row'>
+  		<div class='col-md-12'>
+  			{{ form.low_speed.label }} {{ form.low_speed }}
+  		</div>
+  	</div>
+  	<div class='row'>
+  		<div class='col-md-8'>
+  			{{ form.defense.label }} {{ form.defense }}
+  		</div>
+  	</div>
+  	<div class='row'>
+  		<div class='col-md-6'>
+  			<p>Catching:</p>
+  			{{ form.catch_truss }}
+  			{{ form.catch_ranged }}
+  			{{ form.catch_human }}
+  		</div>
+  		<div class='col-md-6'>
+  			{{ form.result.label }} {{ form.result }}
+  		</div>
+  	</div>
+  	<div class='row'>
+  		<div class='col-md-1'>
+  			<p>Comments:</p>
+  		</div>
+  		<div class='col-md-8'>
+  			{{ form.comments(rows='3') }}
+  		</div>
+  	</div>
+  </div>
+  <div class="row">
+    <div class="col-md-4"><input type="submit" class="btn btn-primary" value="Save"></div>
+  </div>
+</form>
+{% endblock %}
