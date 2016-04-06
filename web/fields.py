@@ -19,7 +19,9 @@ class Form(flask_wtf.Form):
     low = IntegerField('Teleop Low Goals:')
 
     low_speed = RadioField('Teleop Low Goal Speed:', choices=[('-1', 'N/A'),('0','Slow'),('1','Medium'),('2','Fast')])
-    
+    pass_truss = RadioField('Pass Consistency Over Truss', choices=[('-1','N/A'),('0','Inconsistent'),('1','Consistent')])
+    pass_ranged = RadioField('Pass Consistency Ranged', choices=[('-1','N/A'),('0','Inconsistent'),('1','Consistent')])
+
     fouls = IntegerField('Fouls:')
     tfouls = IntegerField('Technical Fouls:')
     defense = RadioField('Defense:',choices=[('-1','N/A'),('0','Bad'),('1','Mediocre'),('2','Good')])
