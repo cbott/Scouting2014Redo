@@ -20,6 +20,8 @@ class Form(flask_wtf.Form):
 
     low_speed = RadioField('Teleop Low Goal Speed:', choices=[('-1', 'N/A'),('0','Slow'),('1','Medium'),('2','Fast')])
     
+    fouls = IntegerField('Fouls:')
+    tfouls = IntegerField('Technical Fouls:')
     defense = RadioField('Defense:',choices=[('-1','N/A'),('0','Bad'),('1','Mediocre'),('2','Good')])
 
     catch_truss = CheckboxButtonField('Truss')
