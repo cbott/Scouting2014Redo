@@ -28,4 +28,4 @@ class Form(flask_wtf.Form):
     catch_ranged = CheckboxButtonField('Ranged')
     catch_human = CheckboxButtonField('From Human')
     result = RadioField("Match Result:", choices=[('2','Win'),('0', 'Loss'),('1', 'Tie')])
-    comments = TextAreaField('', col_lg=12)
+    comments = TextAreaField('', col_md=12)

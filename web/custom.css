@@ -1,9 +1,4 @@
 /* Form-specific CSS */
-
-.horiz-align li, .horiz-align ul{
-	display: inline-block;
-	padding-right: 2em;
-}
 p {
 	font-weight: bold;
 }
