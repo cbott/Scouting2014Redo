@@ -1,11 +1,6 @@
 import flask_wtf
 from widgets import * #http://wtforms.readthedocs.org/en/latest/fields.html
 
-class BreachField(CheckboxButtonField):
-    col_md = 2
-    col_sm = 4
-    col_xs = 12
-
 class Form(flask_wtf.Form):
     match_id = IntegerField('Match #', buttons=False)
     team_id = IntegerField('Team #', buttons=False)
