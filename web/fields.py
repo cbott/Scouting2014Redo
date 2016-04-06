@@ -10,7 +10,7 @@ class Form(flask_wtf.Form):
     match_id = IntegerField('Match #', buttons=False)
     team_id = IntegerField('Team #', buttons=False)
     #Auton Section
-    auton_balls = IntegerField('Auton balls possessed',buttons=False)
+    auton_balls = IntegerField('Auton balls possessed')
     auton_high = RadioField("Auton High Goal", choices=[('0','N/A'),('1','Missed'),('2','Scored')])
     auton_low = RadioField("Auton Low Goal", choices=[('0','N/A'),('1','Missed'),('2','Scored')])
     #Teleop Section
@@ -26,8 +26,8 @@ class Form(flask_wtf.Form):
     tfouls = IntegerField('Technical Fouls:')
     defense = RadioField('Defense:',choices=[('-1','N/A'),('0','Bad'),('1','Mediocre'),('2','Good')])
 
-    catch_truss = CheckboxButtonField('Truss')
-    catch_ranged = CheckboxButtonField('Ranged')
-    catch_human = CheckboxButtonField('From Human')
+    catch_truss = CheckboxButtonField('Truss', col_md=12)
+    catch_ranged = CheckboxButtonField('Ranged', col_md=12)
+    catch_human = CheckboxButtonField('From Human', col_md=12)
     result = RadioField("Match Result:", choices=[('2','Win'),('0', 'Loss'),('1', 'Tie')])
     comments = TextAreaField('', col_md=12)
